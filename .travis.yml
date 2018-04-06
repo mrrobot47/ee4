@@ -1,0 +1,61 @@
+sudo: required
+services:
+  - docker
+
+language: php
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+branches:
+  only:
+    - master
+    - test
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+env:
+  global:
+    - PATH="$TRAVIS_BUILD_DIR/vendor/bin:$PATH"
+
+matrix:
+  include:
+    - php: 7.0
+
+before_install:
+  - |
+    # Remove Xdebug for a huge performance increase:
+    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
+      phpenv config-rm xdebug.ini
+    else
+      echo "xdebug.ini does not exist"
+    fi
+
+install:
+  - composer install
+
+before_script:
+  - composer validate
+
+script:
+  - pwd && ls -al
+  - docker --version
+  - docker-compose --version
+  - php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar  > /dev/null
+  - git config --global user.email "riddhesh.sanghvi@rtcamp.com"
+  - git config --global user.name "Riddhesh Sanghvi"
+  - git clone --quiet --branch master https://mrrobot47:$GITHUB_API_KEY@github.com/mrrobot47/ee4-builds > /dev/null
+  - cp easyengine.phar ee4-builds/
+  - cd ee4-builds
+  - git add .
+  - git remote rm origin
+  - git remote add origin https://mrrobot47:$GITHUB_API_KEY@github.com/mrrobot47/ee4-builds.git
+  - git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
+  - git push origin master > /dev/null 
+
+after_script:
+  - pwd && ls -al

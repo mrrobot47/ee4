@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6cd0e777528ec465834452112be5d19",
+    "content-hash": "e152ae8c38360f7d0d9bd598299d58a6",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -408,16 +408,16 @@
         },
         {
             "name": "mrrobot47/site-command",
-            "version": "v1.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrrobot47/site-command.git",
-                "reference": "060a4f008292e48d17997e37331af278142f662b"
+                "reference": "4579f85d54d24aafc1149cfcbc856e6d5f76c5d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrrobot47/site-command/zipball/060a4f008292e48d17997e37331af278142f662b",
-                "reference": "060a4f008292e48d17997e37331af278142f662b",
+                "url": "https://api.github.com/repos/mrrobot47/site-command/zipball/4579f85d54d24aafc1149cfcbc856e6d5f76c5d7",
+                "reference": "4579f85d54d24aafc1149cfcbc856e6d5f76c5d7",
                 "shasum": ""
             },
             "type": "wp-cli-package",
@@ -446,7 +446,7 @@
                 "MIT"
             ],
             "homepage": "https://github.com/mrrobot47/site-command",
-            "time": "2018-04-02T14:57:58+00:00"
+            "time": "2018-04-04T15:06:34+00:00"
         },
         {
             "name": "mrrobot47/wp-command",
@@ -2467,6 +2467,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "mrrobot47/site-command": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
