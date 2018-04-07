@@ -131,16 +131,16 @@ Creates WordPress site.
 		Generates letsencrypt certificates for the site.
 
     [--title=<title>]
-        Title of website.
+    	Title of website.
 
     [--user=<username>]
-	    Username of the WordPress administrator.
+		Username of the WordPress administrator.
 	 
 	[--pass=<password>]
-	    Password for the WordPress administrator.
+		Password for the WordPress administrator.
 	
 	[--email=<email>]
-	    E-Mail of the WordPress administrator.
+		E-Mail of the WordPress administrator.
 
 ### ee4 site list
 
