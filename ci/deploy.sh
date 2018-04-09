@@ -38,11 +38,7 @@ git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"
 git config push.default "current"
 
-if [[ "$TRAVIS_BRANCH" == "release-"* ]]; then
-	fname="easyengine.phar"
-else
-	fname="easyengine-nightly.phar"
-fi
+fname="easyengine.phar"
 
 mv easyengine.phar ee4-builds/$fname
 cd ee4-builds

@@ -189,7 +189,7 @@ if ( 'cli' === BUILD ) {
 		;
 } else {
 	$finder
-		->in(EE_VENDOR_DIR . '/mrrobot47')
+		->in(EE_VENDOR_DIR . '/easyengine')
 		->in(EE_VENDOR_DIR . '/wp-cli')
 		->in(EE_VENDOR_DIR . '/psr')
 		->in(EE_VENDOR_DIR . '/seld')
