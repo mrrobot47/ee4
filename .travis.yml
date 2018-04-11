@@ -21,6 +21,7 @@ install:
 
 before_script:
   - composer validate
+  - ./ci/prepare.sh
 
 jobs:
   include:
@@ -34,9 +35,9 @@ cache:
 
 branches:
   only:
-    - master
-    - /^release-.+$/
     - test
+    - develop-v4
+    - release/v4
 
 notifications:
   email:

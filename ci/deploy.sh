@@ -30,10 +30,7 @@ set -x
 # add github's public key
 echo "|1|qPmmP7LVZ7Qbpk7AylmkfR0FApQ=|WUy1WS3F4qcr3R5Sc728778goPw= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" >> ~/.ssh/known_hosts
 
-php -dphar.readonly=0 ./utils/make-phar.php easyengine.phar  > /dev/null
-
 git clone git@github.com:mrrobot47/ee4-builds.git
-
 git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"
 git config push.default "current"
@@ -49,5 +46,11 @@ sha512sum $fname | cut -d ' ' -f 1 > $fname.sha512
 
 git add .
 git commit -m "phar build: $TRAVIS_REPO_SLUG@$TRAVIS_COMMIT"
-
 git push
+
+# Trigger docker image build with new phar
+if [[ "$TRAVIS_BRANCH" == "test" ]]; then
+	curl -H "Content-Type: application/json" --data '{"docker_tag": "nightly"}' -X POST https://registry.hub.docker.com/u/easyengine/base/trigger/"$DOCKER_BUILD_TOKEN"/
+else
+	curl -H "Content-Type: application/json" --data '{"docker_tag": "latest"}' -X POST https://registry.hub.docker.com/u/easyengine/base/trigger/"$DOCKER_BUILD_TOKEN"/
+fi
