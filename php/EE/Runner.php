@@ -59,7 +59,7 @@ class Runner {
 			mkdir( $this->config['sites_path'] );
 		}
 		define( 'WEBROOT', \EE\Utils\trailingslashit( $this->config['sites_path'] ) );
-		define( 'DB', EE_CONF_ROOT . '/ee4.db' );
+		define( 'DB', $this->config['db_path'] );
 		define( 'LOCALHOST_IP', '127.0.0.1' );
 		define( 'TABLE', 'sites' );
 	}
@@ -522,6 +522,12 @@ class Runner {
 		{
 			list( $args, $assoc_args, $this->runtime_config ) = $configurator->parse_args( $argv );
 
+			// foo --help  ->  help foo
+            if ( isset( $assoc_args['help'] ) ) {
+                array_unshift( $args, 'help' );
+                unset( $assoc_args['help'] );
+            }
+
 			list( $this->arguments, $this->assoc_args ) = [ $args, $assoc_args ];
 
 			$configurator->merge_array( $this->runtime_config );
@@ -658,6 +664,7 @@ class Runner {
 
 		$this->ensure_present_in_config( 'sites_path', Utils\get_home_dir(). '/ee4-sites' );
 		$this->ensure_present_in_config( 'db_path', Utils\get_home_dir(). '/.ee4/ee4.db' );
+		$this->ensure_present_in_config( 'ee_installer_version', 'stable' );
 		$this->init_ee4();
 
 		// Enable PHP error reporting to stderr if testing.
