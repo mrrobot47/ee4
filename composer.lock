@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c154c6a077a042557c0083d3c893167",
+    "content-hash": "d6ceb9cf6bdc5b6b7d32be21ad19b046",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -263,87 +263,6 @@
             "time": "2018-01-31T13:17:27+00:00"
         },
         {
-            "name": "easyengine/site-command",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/EasyEngine/site-command.git",
-                "reference": "48dd0a1b8169230f03bc3428aed494cd46002658"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/EasyEngine/site-command/zipball/48dd0a1b8169230f03bc3428aed494cd46002658",
-                "reference": "48dd0a1b8169230f03bc3428aed494cd46002658",
-                "shasum": ""
-            },
-            "type": "ee-cli-package",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "bundled": true,
-                "commands": [
-                    "site",
-                    "site create",
-                    "site list",
-                    "site delete"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "": "src/"
-                },
-                "files": [
-                    "site-command.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "homepage": "https://github.com/easyengine/site-command",
-            "time": "2018-04-17T14:56:16+00:00"
-        },
-        {
-            "name": "easyengine/wp-command",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/EasyEngine/wp-command.git",
-                "reference": "24671d90ebf141ee690199388ba99ff44a54b5e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/EasyEngine/wp-command/zipball/24671d90ebf141ee690199388ba99ff44a54b5e5",
-                "reference": "24671d90ebf141ee690199388ba99ff44a54b5e5",
-                "shasum": ""
-            },
-            "type": "ee-cli-package",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "bundled": true,
-                "commands": [
-                    "wp"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "": "src/"
-                },
-                "files": [
-                    "wp-command.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "homepage": "https://github.com/easyengine/wp-command",
-            "time": "2018-04-11T12:21:55+00:00"
-        },
-        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.7",
             "source": {
@@ -486,6 +405,87 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "mrrobot47/site-command",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrrobot47/site-command.git",
+                "reference": "85f913a404d336082e25cc06c79990143134ae89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrrobot47/site-command/zipball/85f913a404d336082e25cc06c79990143134ae89",
+                "reference": "85f913a404d336082e25cc06c79990143134ae89",
+                "shasum": ""
+            },
+            "type": "ee-cli-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "bundled": true,
+                "commands": [
+                    "site",
+                    "site create",
+                    "site list",
+                    "site delete"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                },
+                "files": [
+                    "site-command.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "https://github.com/easyengine/site-command",
+            "time": "2018-04-06T15:50:47+00:00"
+        },
+        {
+            "name": "mrrobot47/wp-command",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrrobot47/wp-command.git",
+                "reference": "4eb2ddd64e2fe8485dfb5a31bb3da4864fd0b792"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrrobot47/wp-command/zipball/4eb2ddd64e2fe8485dfb5a31bb3da4864fd0b792",
+                "reference": "4eb2ddd64e2fe8485dfb5a31bb3da4864fd0b792",
+                "shasum": ""
+            },
+            "type": "ee-cli-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "bundled": true,
+                "commands": [
+                    "wp"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                },
+                "files": [
+                    "wp-command.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "https://github.com/easyengine/wp-command",
+            "time": "2018-04-06T15:37:41+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -2470,8 +2470,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "easyengine/site-command": 20,
-        "easyengine/wp-command": 20,
+        "mrrobot47/site-command": 20,
+        "mrrobot47/wp-command": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
